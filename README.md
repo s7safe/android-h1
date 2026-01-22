@@ -25,8 +25,8 @@ description: 移动安全漏洞挖掘知识库，基于HackerOne公开报告提�
    - 确定查询意图（学习指导、代码审计、案例参考）
 
 2. **知识检索**
-   - Android 相关：读取 [references/android-exploits.md](references/android-exploits.md)，根据关键词定位相关案例
-   - iOS 相关：读取 [references/ios-exploits.md](references/ios-exploits.md)，根据关键词定位相关案例
+   - Android 相关：读取 [android.md](android.md)，根据关键词定位相关案例
+   - iOS 相关：读取 [references/ios.md](ios.md)，根据关键词定位相关案例
    - 提取案例中的"挖掘手法"、"技术细节"、"易出现漏洞的代码模式"三部分
 
 3. **分析与指导**
@@ -66,12 +66,12 @@ description: 移动安全漏洞挖掘知识库，基于HackerOne公开报告提�
 ## 资源索引
 
 ### 核心参考资料
-- **Android 漏洞知识库**：[references/android-exploits.md](references/android-exploits.md)
+- **Android 漏洞知识库**：[android.md](android.md)
   - 内容：基于 100+ HackerOne 报告的 Android 漏洞案例
   - 用途：Android 应用漏洞挖掘指导、代码模式参考
   - 覆盖类型：业务逻辑缺陷、组件安全、数据存储、权限绕过、API 安全等
 
-- **iOS 漏洞知识库**：[references/ios-exploits.md](references/ios-exploits.md)
+- **iOS 漏洞知识库**：[ios.md](ios.md)
   - 内容：基于 100+ HackerOne 报告的 iOS 漏洞案例
   - 用途：iOS 应用漏洞挖掘指导、代码模式参考
   - 覆盖类型：URL Scheme 处理、Deep Link 安全、数据保护、API 安全等
