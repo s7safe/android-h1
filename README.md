@@ -26,7 +26,7 @@ description: 移动安全漏洞挖掘知识库，基于HackerOne公开报告提�
 
 2. **知识检索**
    - Android 相关：读取 [android.md](android.md)，根据关键词定位相关案例
-   - iOS 相关：读取 [references/ios.md](ios.md)，根据关键词定位相关案例
+   - iOS 相关：读取 [ios.md](ios.md)，根据关键词定位相关案例
    - 提取案例中的"挖掘手法"、"技术细节"、"易出现漏洞的代码模式"三部分
 
 3. **分析与指导**
