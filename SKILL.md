@@ -1,117 +1,113 @@
 ---
 name: mobile-security-expert
-description: 移动安全漏洞挖掘知识库，基于HackerOne公开报告提供Android和iOS应用的漏洞挖掘手法、技术细节和代码模式分析；用于安全研究人员和漏洞挖掘者学习参考、代码审计和漏洞检测指导。
+description: "Guides mobile app vulnerability hunting based on 100+ real HackerOne reports — covers Android component exploits, iOS URL scheme attacks, 2FA bypass, deeplink CSRF, WebView info leaks, and API key exposure. Use when performing mobile pentests, bug bounty hunting, code auditing Android/iOS apps, or studying exploit techniques from disclosed reports."
+user-invocable: true
+triggers:
+  - "mobile security"
+  - "android vulnerability"
+  - "ios vulnerability"
+  - "bug bounty mobile"
+  - "mobile pentest"
+  - "HackerOne mobile"
+  - "漏洞挖掘"
+  - "移动安全"
+  - "代码审计"
+  - "reverse engineering app"
+  - "deeplink attack"
+  - "URL scheme exploit"
+  - "2FA bypass"
+  - "WebView security"
+  - "android exploit"
+  - "ios exploit"
 ---
 
-# 移动安全漏洞挖掘知识库
+# Mobile Security Vulnerability Research — HackerOne Knowledge Base
 
-## 任务目标
-- 本 Skill 用于：基于 HackerOne 公开报告的移动安全漏洞挖掘指导与知识查询
-- 能力包含：
-  - Android 漏洞挖掘指导（业务逻辑缺陷、组件安全、数据存储、权限绕过等）
-  - iOS 漏洞挖掘指导（URL Scheme、Deep Link、数据保护、API 安全等）
-  - 漏洞案例查询和分析（真实报告手法总结）
-  - 代码模式识别和漏洞检测（对比已知漏洞模式）
-  - 挖掘工具使用指导（Drozer、Frida、Burp Suite 等）
-- 触发条件：用户询问移动应用安全、漏洞挖掘方法、代码审计、HackerOne 案例分析等
+## Workflow
 
-## 操作步骤
+### 1. Identify target scope
 
-### 标准流程
+- Determine platform: Android, iOS, or cross-platform
+- Classify vulnerability type: component security, business logic, data storage, API security, authentication bypass, deeplink/URL scheme
 
-1. **需求识别与场景匹配**
-   - 确定目标平台（Android/iOS）或跨平台
-   - 识别漏洞类型（业务逻辑、组件安全、数据保护等）
-   - 确定查询意图（学习指导、代码审计、案例参考）
+### 2. Retrieve matching cases from knowledge base
 
-2. **知识检索**
-   - Android 相关：读取 [android.md](android.md)，根据关键词定位相关案例
-   - iOS 相关：读取 [ios.md](ios.md)，根据关键词定位相关案例
-   - 提取案例中的"挖掘手法"、"技术细节"、"易出现漏洞的代码模式"三部分
+- **Android vulnerabilities**: Read [android.md](android.md) — 100+ cases covering exported Activity exploits, Intent hijacking, insecure data storage, 2FA logic flaws, API key exposure, WebView misconfigurations
+- **iOS vulnerabilities**: Read [IOS.md](IOS.md) — 100+ cases covering URL Scheme handling, Deep Link CSRF, data protection bypass, WebView info leaks, API security flaws
 
-3. **分析与指导**
-   - **挖掘手法指导**：根据案例中的详细步骤，为用户提供可操作的挖掘流程
-   - **技术细节讲解**：解释漏洞的成因、利用方式和关键技术点
-   - **代码模式识别**：对比用户提供的代码与已知的漏洞模式，指出潜在风险
-   - **工具使用建议**：根据案例需要，推荐并指导使用相关安全测试工具
+Each case contains three sections:
+1. **Mining technique** — step-by-step discovery process with tool commands
+2. **Technical details** — attack flow, payload construction, exploitation specifics
+3. **Vulnerable code patterns** — code examples showing insecure vs. secure implementations
 
-4. **输出组织**
-   - 针对性回答用户问题，避免堆砌无关案例
-   - 提供具体可执行的步骤和命令
-   - 包含真实案例链接供深入参考
-   - 如涉及代码分析，明确指出漏洞位置和修复建议
+**If no matching case found**: Apply general vulnerability class heuristics, note the gap, and recommend the closest related case as a starting point.
 
-### 典型场景处理
+### 3. Deliver actionable guidance
 
-**场景 A：如何挖掘特定类型漏洞**
-- 查询相关文档，提取对应漏洞类型的案例
-- 总结该类漏洞的通用挖掘思路和关键点
-- 提供详细的步骤指导和工具使用方法
+- Provide concrete commands the researcher can execute immediately
+- Include tool-specific instructions (Drozer, Frida, Burp Suite, objection)
+- Show vulnerable vs. secure code patterns side-by-side when analyzing user code
+- Link to original HackerOne report for full context
 
-**场景 B：代码审计和漏洞检测**
-- 读取文档中对应的"易出现漏洞的代码模式"
-- 对比用户代码，识别相似模式
-- 提供具体的漏洞点和修复建议
+**Validation checkpoint**: Confirm the guidance matches the user's target platform and app context before proceeding to deeper analysis.
 
-**场景 C：HackerOne 案例分析**
-- 根据报告 URL 或漏洞名称，定位文档中的对应案例
-- 总结该案例的核心挖掘手法和技术亮点
-- 分析该手法在其他场景的可复用性
+### 4. Iterate on failed exploitation
 
-**场景 D：学习移动安全知识**
-- 按平台和漏洞类型系统性地提供案例索引
-- 从简单到复杂，推荐学习路径
-- 强调实战经验和技巧
+If an exploit does not reproduce or initial analysis finds no match:
+- Verify the target app version matches the case — patches may have fixed the vulnerability
+- Check for additional protections (certificate pinning, runtime integrity checks, WAF rules)
+- Try alternative attack vectors from related cases in the knowledge base
+- If no matching case exists, apply general vulnerability class heuristics and document the gap
 
-## 资源索引
+## Quick reference
 
-### 核心参考资料
-- **Android 漏洞知识库**：[android.md](android.md)
-  - 内容：基于 100+ HackerOne 报告的 Android 漏洞案例
-  - 用途：Android 应用漏洞挖掘指导、代码模式参考
-  - 覆盖类型：业务逻辑缺陷、组件安全、数据存储、权限绕过、API 安全等
+See [QUICK_REFERENCE.md](QUICK_REFERENCE.md) for Android security testing checklists, critical code patterns, and essential testing workflow.
 
-- **iOS 漏洞知识库**：[ios.md](ios.md)
-  - 内容：基于 100+ HackerOne 报告的 iOS 漏洞案例
-  - 用途：iOS 应用漏洞挖掘指导、代码模式参考
-  - 覆盖类型：URL Scheme 处理、Deep Link 安全、数据保护、API 安全等
+## Concrete examples
 
-### 参考文档结构
-每个案例包含三个核心部分：
-1. **挖掘手法**：漏洞发现的具体步骤、工具使用、分析思路
-2. **技术细节**：攻击流程、Payload 构造、关键技术点
-3. **易出现漏洞的代码模式**：漏洞代码示例和修复建议
+### Example 1: Enumerate exported Android Activities
 
-## 注意事项
+**Goal**: Find authentication bypass via exported Activity components
 
-- **上下文控制**：根据具体问题选择性阅读相关章节，避免一次性加载整个文档
-- **实战导向**：重点提供可操作的挖掘步骤和工具使用方法，而非理论讲解
-- **安全合规**：所有挖掘手法仅用于授权的安全测试和学习研究
-- **案例真实性**：所有案例均来自 HackerOne 公开报告，附有原始报告链接
-- **代码安全**：在分析用户代码时，仅识别漏洞模式，不执行代码本身
+```bash
+# List exported activities with Drozer
+run app.activity.info -a com.target.app
 
-## 使用示例
+# Launch a sensitive activity directly (bypassing auth)
+run app.activity.start --component com.target.app com.target.app.admin.DashboardActivity
 
-### 示例 1：Android Activity 认证绕过挖掘
-**功能说明**：学习如何挖掘 Android 应用的 Activity 认证绕过漏洞
-**执行方式**：智能体分析 + 文档检索
-**关键要点**：
-- 使用 Drozer 枚举导出的 Activity 组件
-- 测试敏感 Activity 是否需要认证
-- 检查 AndroidManifest.xml 配置和代码逻辑
+# Check AndroidManifest.xml for exported="true" on sensitive activities
+aapt dump xmltree target.apk AndroidManifest.xml | grep -A5 "activity.*Dashboard"
+```
 
-### 示例 2：iOS URL Scheme 漏洞分析
-**功能说明**：分析 iOS 应用的 URL Scheme 处理是否存在安全漏洞
-**执行方式**：智能体代码分析 + 文档参考
-**关键要点**：
-- 检查 Info.plist 中注册的 URL Scheme
-- 分析 AppDelegate/SceneDelegate 中的 URL 处理逻辑
-- 验证调用来源和参数校验
+### Example 2: Hook iOS URL Scheme handler with Frida
 
-### 示例 3：2FA 逻辑缺陷挖掘
-**功能说明**：指导如何发现移动应用的 2FA 实现逻辑漏洞
-**执行方式**：智能体流程指导 + 工具使用建议
-**关键要点**：
-- 测试短信重发的速率限制
-- 验证手机号码绑定时的授权检查
-- 使用 Burp Suite 拦截和分析请求
+**Goal**: Intercept and analyze URL Scheme processing for injection/CSRF
+
+```javascript
+// Frida script — hook openURL handler in AppDelegate
+Interceptor.attach(ObjC.classes.AppDelegate['- application:openURL:options:'].implementation, {
+  onEnter: function(args) {
+    var url = new ObjC.Object(args[3]);
+    console.log('[URL Scheme] Received: ' + url.absoluteString());
+  }
+});
+```
+
+### Example 3: Test 2FA rate limiting with Burp Suite
+
+**Goal**: Discover missing rate limits on SMS verification endpoints
+
+```
+# Burp Intruder setup:
+# 1. Intercept POST /api/v1/verify-sms
+# 2. Set payload position on "code" parameter
+# 3. Use numeric payload 000000-999999
+# 4. Monitor for 200 OK responses — indicates no rate limiting
+# 5. Check if phone number binding lacks authorization (IDOR)
+```
+
+## Important notes
+
+- **Selective retrieval**: Read only relevant sections of android.md/IOS.md based on the query — avoid loading entire documents
+- **Real cases**: Every case traces back to a public HackerOne report with original links
